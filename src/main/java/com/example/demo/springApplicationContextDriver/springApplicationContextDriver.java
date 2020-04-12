@@ -17,6 +17,8 @@ public class springApplicationContextDriver {
                      new ClassPathXmlApplicationContext("applicationContext.xml")) {
             XmlPersonDAO xmlPersonDAO = classPathXmlApplicationContext.getBean(XmlPersonDAO.class);
             logger.info("{}",xmlPersonDAO);
+//            This type of type conversion is not really clear to me.
+            logger.info("Beans loaded -> {}", (Object) classPathXmlApplicationContext.getBeanDefinitionNames());
             logger.info("{}",xmlPersonDAO.getXmlJdbcConnection());
         }
 
